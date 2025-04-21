@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GSB – Reconditionnement et Procédures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1e40af;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .results-box {
+      background-color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GSB – Reconditionnement & Maintenance</h1>
+    <p>Procédures pour le traitement et la préparation des équipements</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>🔧 Fiche procédure : Préparation de poste</h2>
+      <p>Connecter l’ordinateur portable au réseau qui contient le serveur de masterisation. Il ne doit pas y avoir de système d’exploitation installé sur l’ordinateur.</p>
+      <h3>Installation de Windows 10</h3>
+      <ol>
+        <li>Choisir la langue : Français, puis cliquer sur "Installer maintenant".</li>
+        <li>Activer Windows 10 avec la clé trouvée dans la boîte de licence.</li>
+        <li>Choisir "Windows 10 Professionnel" puis accepter le contrat de licence.</li>
+        <li>Choisir l’option d’installation "Personnalisé".</li>
+        <li>Sélectionner le disque dur et cliquer sur "Suivant".</li>
+        <li>Retirer la clé USB à la fin de l'installation avant le redémarrage.</li>
+      </ol>
+      <h3>Configuration de Windows 10</h3>
+      <ul>
+        <li>Région : France</li>
+        <li>Clavier : Français - Ignorer le second clavier</li>
+        <li>Compte : Utilisation personnelle, connexion locale avec le nom "admin" et un mot de passe</li>
+        <li>Services Microsoft : Refuser tous les services proposés (reconnaissance vocale, emplacement, diagnostic, etc.)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>💽 Procédure d’installation d’un appareil de masterisation</h2>
+      <h3>Prérequis</h3>
+      <ul>
+        <li>Logiciel FOG</li>
+        <li>Ordinateur compatible avec boot PXE</li>
+        <li>Clé d’activation OEM</li>
+        <li>Désactivation du pare-feu</li>
+      </ul>
+      <h3>Configuration PC mère</h3>
+      <ul>
+        <li>Installation de Windows</li>
+        <li>Installation des pilotes</li>
+        <li>Installation des logiciels essentiels (Pack Office...)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🖥️ Configuration du serveur FOG (Résumé préconisation)</h2>
+      <ol>
+        <li>Se connecter au compte ‘admin’ sur le site de FOG.</li>
+        <li>Créer un nouvel host dans “Host Management” avec adresse MAC + nom.</li>
+        <li>Créer une image dans “Image Management” en choisissant "Multiple partition image" et système "Windows 10".</li>
+        <li>Associer l’image à l’host puis créer une tâche de "Capture".</li>
+        <li>Redémarrer la machine en PXE pour transférer l’image.</li>
+        <li>Déployer l’image sur les autres machines en réseau via tâche “Deploy”.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>🧾 Fiche procédure – Récupération d’un équipement</h2>
+      <h3>Procédure de déclaration</h3>
+      <p>Lorsqu'une panne est constatée :</p>
+      <ol>
+        <li>Contacter la GSB par mail ou téléphone.</li>
+        <li>Remplir un coupon d’identification avec les champs suivants :</li>
+      </ol>
+      <ul>
+        <li>Nom, prénom</li>
+        <li>Email</li>
+        <li>Numéro de téléphone</li>
+        <li>Adresse</li>
+        <li>Motif : Reconditionnement ou Réparation</li>
+        <li>Description du problème constaté</li>
+      </ul>
+      <p>Le service analysera le PC dans les plus brefs délais. Si une panne majeure est détectée, GSB contactera l'utilisateur et pourra demander un remboursement en cas de dégâts causés volontairement ou par négligence.</p>
+    </section>
+
+    <section>
+      <h2>🎯 Objectif global du projet GSB</h2>
+      <p>Standardiser les procédures de maintenance et de reconditionnement afin de garantir un matériel fonctionnel, sécurisé et mis à jour pour tous les collaborateurs de la société GSB. Ce travail s’inscrit dans une démarche de rigueur technique et de gestion de parc informatique.</p>
+    </section>
+
+    <section>
+        <h2>📥 Télécharger le diaporama</h2>
+        <p>Tu peux télécharger ici le diaporama de présentation du projet GSB :</p>
+        <a href="document/presentation-final.pptx" download="diaporama-gsb.pptx" style="
+          display: inline-block;
+          padding: 0.6rem 1rem;
+          background-color: #1e40af;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-weight: 600;
+          transition: background-color 0.3s ease;
+        ">Télécharger le diaporama</a>
+      </section>
+      
+
+  </div>
+
+  <div style="text-align: right; max-width: 960px; margin: auto; padding: 1rem;">
+    <a href="index.html" style="
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    ">⬅️ Retour</a>
+  </div>
+
+  <footer class="w3l-footer-29-main">
+    <div class="footer-29 pt-1 pb-4">
+            <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2">© Ait-Ahmed Kéwan - Portfolio BTS&nbsp;SIO&nbsp;Chantilly</p>
+    </div>
+</footer>
+</body>
+</html>

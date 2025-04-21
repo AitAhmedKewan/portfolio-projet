@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aircrack-ng – Attaque sur réseau Wi-Fi avec Aircrack</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 Aircrack-ng – Attaque sur réseau Wi-Fi avec Aircrack</h1>
+    <p>Utilisation dans notre projet de cybersécurité avec Kali Linux</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation de Aircrack-ng</h2>
+      <p>
+        Aircrack-ng est une suite d'outils de piratage Wi-Fi open-source, utilisée principalement pour effectuer des attaques sur des réseaux sans fil protégés par des protocoles comme WEP et WPA/WPA2. Il permet de capturer les paquets, de les analyser et de tenter de casser les clés de sécurité.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Étapes pour utiliser Aircrack-ng</h2>
+      <p>Voici les étapes pour utiliser Aircrack-ng dans une attaque par dictionnaire sur un réseau Wi-Fi :</p>
+
+      <h3>1. Démarrer la capture des paquets</h3>
+      <p>Commencez par mettre l'interface Wi-Fi en mode moniteur, puis capturez les paquets du réseau cible avec Airodump-ng :</p>
+      <div class="code-box">
+sudo airmon-ng start wlan0
+sudo airodump-ng wlan0mon
+      </div>
+      <p>Choisissez le canal du réseau cible et le fichier pour sauvegarder les paquets capturés.</p>
+
+      <h3>2. Capturer les paquets de la clé WPA/WPA2</h3>
+      <p>Une fois que vous avez capturé des paquets de données et un handshake, vous pouvez utiliser Aircrack-ng pour tenter de casser le mot de passe. Vous avez besoin de la capture du handshake et d'un fichier de mots de passe pour effectuer l'attaque par dictionnaire :</p>
+      <div class="code-box">
+aircrack-ng -w /usr/share/wordlists/rockyou.txt capturefile.cap
+      </div>
+
+      <h3>3. Attente de la découverte du mot de passe</h3>
+      <p>Le processus de craquage peut prendre un certain temps en fonction de la taille du dictionnaire et de la complexité du mot de passe. Le nombre de paquets capturés influencera également la durée du processus.</p>
+
+      <h3>4. Résultat obtenu</h3>
+      <p>Aircrack-ng vous donnera le mot de passe WPA une fois qu'il sera trouvé. Par exemple :</p>
+      <div class="code-box">
+[+] WPA handshake captured
+[+] Cracking WPA password...
+[+] Found WPA password: password123
+      </div>
+
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Voici quelques captures d'écran illustrant l'attaque avec Aircrack-ng :</p>
+      <img src="images/aircrack1.png" alt="Capture des paquets Wi-Fi" style="max-width: 70%;">
+      <img src="images/aircrack2.png" alt="Aircrack-ng tentant de casser la clé WPA">
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+Aircrack-ng a permis de découvrir la clé WPA du réseau ciblé en utilisant une attaque par dictionnaire. Cela démontre encore une fois l'importance de choisir des mots de passe complexes pour sécuriser les réseaux sans fil.
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>Aircrack-ng est un excellent outil pour tester la robustesse des mots de passe sur les réseaux Wi-Fi.</li>
+        <li>Il met en évidence l'importance d'utiliser des mots de passe longs, complexes et uniques pour chaque réseau.</li>
+        <li>Il peut également être utilisé pour effectuer des audits de sécurité légitimes sur des réseaux pour lesquels vous avez l'autorisation d'accès.</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Source et Références</h3>
+      <p>
+        Aircrack-ng est un projet open-source utilisé dans la cybersécurité pour tester la sécurité des réseaux Wi-Fi. Comme toujours, il doit être utilisé dans un cadre légal, avec l'autorisation explicite des propriétaires de réseaux.
+      </p>
+      <ul>
+        <li><a href="https://www.aircrack-ng.org/" target="_blank">Page officielle d'Aircrack-ng</a></li>
+        <li><a href="https://github.com/aircrack-ng/aircrack-ng" target="_blank">GitHub d'Aircrack-ng</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>

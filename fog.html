@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet FOG – Portfolio BTS SIO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1e40af;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .results-box {
+      background-color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    img {
+      width: 100%;
+      max-width: 70%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projet FOG – Déploiement de Systèmes et Applications</h1>
+    <p>Travail pratique – BTS SIO SISR</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📍 Présentation</h2>
+      <p>Ce projet a consisté à mettre en place une solution complète de déploiement d’images systèmes et de logiciels à l’aide de FOG, un outil libre et open source basé sur Linux. Le but était de simplifier l’administration d’un parc informatique tout en appliquant les compétences acquises en réseau, systèmes et automatisation.</p>
+      <p>Nous avons installé FOG sur une machine Debian, puis configuré les différents modules nécessaires pour capturer une image système, déployer cette image sur plusieurs machines, et gérer le cycle de vie des postes via une interface web intuitive.</p>
+    </section>
+
+    <section>
+      <h2>🛠️ Fonctionnalités principales de FOG</h2>
+      <ul>
+        <li>Déploiement d’image système (Windows/Linux)</li>
+        <li>Support du démarrage réseau (PXE)</li>
+        <li>Inventaire automatisé des machines</li>
+        <li>Déploiement en unicast et multicast</li>
+        <li>Gestion des snapins (installation de logiciels)</li>
+        <li>Réinitialisation de mot de passe Windows</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🧪 Étapes du projet</h2>
+      <ul>
+        <li>Préparation de la VM Debian et installation du serveur FOG</li>
+        <li>Configuration du DHCP pour permettre le boot PXE</li>
+        <li>Connexion des clients au serveur via le réseau</li>
+        <li>Enregistrement et classification des machines clientes</li>
+        <li>Capture d’une image Windows 10 préparée (avec logiciels)</li>
+        <li>Déploiement de cette image sur d’autres clients</li>
+        <li>Création de snapins pour installer automatiquement OCS Inventory et Avast</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Voici quelques illustrations du projet :</p>
+      <img src="images/fog-interface.png" alt="Interface web de FOG">
+      <img src="images/fog-pxe.png" alt="Démarrage PXE">
+      <img src="images/fog-upload.png" alt="Upload de l'image système">
+      <img src="images/fog-snapin.png" alt="Déploiement d'un snapin OCS Inventory">
+    </section>
+
+    <section>
+      <h2>⚙️ Problèmes rencontrés</h2>
+      <ul>
+        <li>Configuration DHCP conflictuelle avec le réseau principal</li>
+        <li>Erreur lors du boot PXE sur certaines machines (incompatibilité UEFI/Legacy)</li>
+        <li>Temps d’attente long pour le multicast avec peu de clients</li>
+        <li>Permissions root à accorder pour les scripts de snapin</li>
+      </ul>
+      <p>Ces problèmes ont été résolus par l'ajustement des paramètres réseau, l'utilisation d'une VM bridgée, et la configuration manuelle de certains services du serveur Debian.</p>
+    </section>
+
+    <section>
+      <h2>📊 Résultats obtenus</h2>
+      <div class="results-box">
+- ✅ FOG installé et configuré sur Debian
+- 🖥️ Machines clientes détectées automatiquement via PXE
+- 📸 Image Windows 10 capturée avec succès
+- 🚀 Déploiement fonctionnel sur plusieurs machines
+- 🔁 Fonction multicast testée avec 3 clients
+- 📦 Installation automatisée d’OCS et Avast via Snapins
+      </div>
+    </section>
+
+    <section>
+      <h2>🎯 Compétences mises en œuvre</h2>
+      <ul>
+        <li>Administration système sous Linux (Debian)</li>
+        <li>Gestion réseau et configuration DHCP/PXE</li>
+        <li>Automatisation avec snapins et scripts Bash</li>
+        <li>Travail en équipe et documentation technique</li>
+      </ul>
+    </section>
+
+    <section>
+        <h2>📚 Ressources utilisées</h2>
+        <ul>
+          <li><a href="https://docs.fogproject.org/" target="_blank"><strong>Documentation officielle FOG</strong></a></li>
+          <li><a href="https://www.fogproject.org/forum/" target="_blank"><strong>Forums communautaires</strong></a></li>
+          <li><a href="https://www.youtube.com/results?search_query=installation+FOG" target="_blank"><strong>Tutoriels YouTube</strong></a></li>
+          <li><a href="https://www.debian.org/doc/" target="_blank"><strong>Manuels Debian</strong></a></li>
+          <li><a href="https://ocsinventory-ng.org/" target="_blank"><strong>Articles OCS Inventory</strong></a></li>
+          <li><strong>Documentation interne (cahier des charges)</strong></li>
+        </ul>
+        <p>Ces ressources m’ont permis de mieux comprendre les mécanismes internes de FOG et d’anticiper les éventuels blocages pendant le projet.</p>
+      </section>
+
+  </div>
+
+  <div style="text-align: right; max-width: 960px; margin: auto; padding: 1rem;">
+    <a href="projet.html" style="
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    ">⬅️ Retour</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+</body>
+</html>

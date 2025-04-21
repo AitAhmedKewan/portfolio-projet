@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zmap – Scan de réseau ultra rapide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🌐 Zmap – Scan de Réseau Ultra Rapide</h1>
+    <p>Utilisation dans notre projet de cybersécurité avec Kali Linux</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation de Zmap</h2>
+      <p>
+        Zmap est un scanner réseau open-source ultra rapide conçu pour scanner des plages d'adresses IP à grande vitesse. Il est utilisé pour collecter des informations comme les ports ouverts sur un large ensemble d'hôtes.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Étapes pour utiliser Zmap</h2>
+
+      <h3>1. Installation de Zmap</h3>
+      <div class="code-box">
+sudo apt update
+sudo apt install zmap
+      </div>
+
+      <h3>2. Lancer un scan simple</h3>
+      <p>Pour scanner le port 80 sur le réseau local :</p>
+      <div class="code-box">
+zmap -p 80 192.168.1.0/24
+      </div>
+      <p>
+        Ici, <code>-p 80</code> spécifie le port à scanner (HTTP), et <code>192.168.1.0/24</code> est la plage d’adresses IP ciblée.
+      </p>
+
+      <h3>3. Scan avec export vers un fichier</h3>
+      <div class="code-box">
+zmap -p 22 192.168.1.0/24 -o resultats_ssh.txt
+      </div>
+      <p>
+        <code>-o</code> permet d'enregistrer les résultats dans un fichier texte. Ici, on scanne le port 22 (SSH).
+      </p>
+
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Voici quelques captures d’écran illustrant l'utilisation de Zmap :</p>
+      <img src="images/zmap1.webp" alt="Scan Zmap sur port 80" style="max-width: 70%;">
+      <img src="images/zmap2.jpg" alt="Fichier de résultats Zmap" style="max-width: 70%;">
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+Le scan avec Zmap a permis d'identifier les hôtes actifs sur le réseau local ayant les ports 22 et 80 ouverts. Les résultats ont été stockés dans un fichier texte pour une analyse ultérieure.
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>Zmap est un outil extrêmement rapide comparé à Nmap, mais moins détaillé.</li>
+        <li>Parfait pour les scans de masse afin d’identifier rapidement des cibles actives.</li>
+        <li>Utile dans les phases de reconnaissance lors d’audits de sécurité ou de tests d’intrusion autorisés.</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Source et Références</h3>
+      <p>Zmap est un projet open-source maintenu par l’Université du Michigan.</p>
+      <ul>
+        <li><a href="https://github.com/zmap/zmap" target="_blank">Page GitHub officielle de Zmap</a></li>
+        <li><a href="https://zmap.io" target="_blank">Site officiel de Zmap</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>

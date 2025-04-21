@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scripts PowerShell – Portfolio BTS SIO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1e40af;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    pre {
+      background-color: #2d2d2d;
+      color: #f8f8f8;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    code {
+      color: #d4d4d4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #1e293b;
+    }
+
+    .link {
+      text-decoration: none;
+      color: #1e40af;
+    }
+
+    .btn {
+      background-color: #1e40af;
+      color: white;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0f2a60;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Scripts PowerShell – Projet Active Directory</h1>
+  <p>Présentation des scripts PowerShell utilisés pour l'administration et la gestion des utilisateurs dans l'infrastructure Active Directory.</p>
+</header>
+
+<div class="container">
+  
+  <section>
+    <h2>1. Script de création d'un utilisateur</h2>
+    <p>
+      Ce script permet de créer un nouvel utilisateur dans Active Directory avec des attributs personnalisés comme le prénom, le nom et le nom d'utilisateur. Il définit également un mot de passe initial et un répertoire pour chaque utilisateur avec des autorisations spécifiques.
+    </p>
+    <pre><code>
+param (
+    [string]$Prenom,
+    [string]$Nom
+)
+
+$DomainName="dom.kewan"
+$DomName="DOMKEWAN"
+$SamAccountName = "$($Prenom.Substring(0,1))$Nom".ToLower()
+$Nom = $Nom.ToUpper()
+$Prenom = "$($Prenom.Substring(0,1))".ToUpper() + "$($Prenom.Substring(1))".ToLower()
+
+New-ADUser `
+    -Name "$Prenom $Nom" `
+    -GivenName "$Prenom" `
+    -Surname "$Nom" `
+    -SamAccountName "$SamAccountName" `
+    -UserPrincipalName "$SamAccountName@$DomainName" `
+    -Path "OU=Utilisateurs,DC=dom,DC=kewan" `
+    -AccountPassword (ConvertTo-SecureString "Eleve1234!" -AsPlainText -Force) `
+    -Enabled $true `
+    -ChangePasswordAtLogon $true
+
+$RepUser = "C:\Partages\$SamAccountName"
+New-Item -Path $RepUser -ItemType Directory
+$acl = Get-Acl $RepUser
+$acl.SetAccessRuleProtection($true,$false)
+$droitsUser = New-Object System.Security.AccessControl.FileSystemAccessRule($User,"Modify","ContainerInherit,ObjectInherit","None","Allow")
+$acl.AddAccessRule($droitsUser)
+Set-Acl -Path $RepUser -AclObject $acl
+    </code></pre>
+    <p>Ce script crée un utilisateur Active Directory et attribue un répertoire de stockage personnel avec des permissions appropriées.</p>
+  </section>
+
+  <section>
+    <h2>2. Script de login</h2>
+    <p>
+      Ce script est exécuté lors de l'ouverture de session d'un utilisateur. Il enregistre les connexions dans un fichier CSV avec la date, l'heure, le nom d'utilisateur et le nom de la machine.
+    </p>
+    <pre><code>
+Add-content -Path "\\192.168.2.1\Logs$\connect.cvs" -Value "C;$(Get-Date -Format yyyy-MM-dd-hh:mm:ss);$Env:USERNAME;$Env:COMPUTERNAME"
+    </code></pre>
+    <p>Ce script permet de suivre les connexions des utilisateurs en temps réel dans un fichier centralisé.</p>
+  </section>
+
+  <section>
+    <h2>3. Script de logout</h2>
+    <p>
+      Ce script est exécuté lors de la fermeture de session d'un utilisateur. Il enregistre les déconnexions dans le même fichier CSV.
+    </p>
+    <pre><code>
+Add-content -Path "\\192.168.2.1\Logs$\connect.cvs" -Value "D;$(Get-Date -Format yyyy-MM-dd-hh:mm:ss);$Env:USERNAME;$Env:COMPUTERNAME"
+    </code></pre>
+    <p>Ce script permet d'enregistrer les déconnexions pour un suivi complet des utilisateurs connectés.</p>
+  </section>
+
+  <section>
+    <h2>4. Script de sauvegarde</h2>
+    <p>
+      Ce script permet de sauvegarder des fichiers importants sur un serveur de sauvegarde. Il vérifie si la sauvegarde est réussie et affiche un message d'erreur si quelque chose ne va pas.
+    </p>
+    <pre><code>
+$dossierASauvegarder = "C:\Sauvegardes\"
+$destination = "\Sauvegardes_clients"
+
+try {
+    Copy-Item -Path $dossierASauvegarder -Destination "$destination\$env:COMPUTERNAME" -Recurse
+    Write-Host "Les fichiers ont été sauvegardés"
+}
+catch {
+     Write-Host "Erreur dans la sauvegarde : $_"
+}
+    </code></pre>
+    <p>Ce script garantit la sécurité des données des utilisateurs en les sauvegardant régulièrement dans un emplacement dédié.</p>
+  </section>
+
+  <section>
+    <h2>5. Script de création d’un utilisateur simplifié</h2>
+    <p>
+      Ce script crée un utilisateur et lui attribue un répertoire avec des permissions. Il permet d'automatiser le processus de création d'utilisateurs pour de grands environnements.
+    </p>
+    <pre><code>
+New-ADUser -Name "eleve" -AccountPassword (ConvertTo-SecureString "eleve" -AsPlainText -Force) -Enabled $true
+New-Item -Path "C:\Users\eleve" -ItemType Directory
+New-SmbShare -Name "eleve" -Path "C:\Users\eleve" -FullAccess "eleve"
+$acl = Get-Acl "C:\Users\eleve"
+$acl.SetAccessRule((New-Object System.Security.AccessControl.FileSystemAccessRule("eleve", "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")))
+Set-Acl -Path "C:\Users\eleve" -AclObject $acl
+    </code></pre>
+    <p>Un script d'usage quotidien pour créer des utilisateurs avec un répertoire personnel partagé et des permissions d'accès.</p>
+  </section>
+
+  <section>
+    <h2>💡 Conclusion</h2>
+    <p>
+      Ces scripts PowerShell sont des outils essentiels pour administrer Active Directory, créer des utilisateurs, gérer les connexions et assurer la sauvegarde des données. Ils permettent d'automatiser de nombreuses tâches répétitives et d'améliorer l'efficacité dans un environnement d'entreprise.
+    </p>
+  </section>
+
+</div>
+
+<div style="text-align: right; max-width: 960px; margin: auto; padding: 1rem;">
+    <a href="activedirectory.html" style="
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    ">⬅️ Retour</a>
+  </div>
+
+  <footer class="w3l-footer-29-main">
+    <div class="footer-29 pt-1 pb-4">
+      <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2">© Ait-Ahmed Kéwan - Portfolio BTS&nbsp;SIO&nbsp;Chantilly</p>
+    </div>
+  </footer>
+
+</body>
+</html>

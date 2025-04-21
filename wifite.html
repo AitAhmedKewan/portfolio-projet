@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wifite – Attaque par Dictionnaire sur réseau Wi-Fi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 Wifite – Attaque par Dictionnaire sur réseau Wi-Fi</h1>
+    <p>Utilisation dans notre projet de cybersécurité avec Kali Linux</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation de Wifite</h2>
+      <p>
+        Wifite est un outil automatisé conçu pour attaquer les réseaux Wi-Fi protégés par des clés WEP et WPA. Il permet de réaliser des attaques par dictionnaire sur les clés WEP et WPA, en capturant les paquets et en exploitant les vulnérabilités des réseaux Wi-Fi.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Étapes pour utiliser Wifite</h2>
+      <p>Voici les étapes pour utiliser Wifite et réaliser une attaque par dictionnaire sur un réseau Wi-Fi :</p>
+
+      <h3>1. Démarrer Wifite</h3>
+      <p>Lancez Wifite avec la commande suivante :</p>
+      <div class="code-box">
+wifite
+      </div>
+
+      <h3>2. Choisir le réseau cible</h3>
+      <p>Une fois Wifite lancé, il va scanner les réseaux Wi-Fi à proximité. Sélectionnez le réseau cible en fonction de son numéro dans la liste affichée.</p>
+
+      <h3>3. Choisir le type d'attaque</h3>
+      <p>Wifite propose plusieurs types d'attaque, parmi lesquels :</p>
+      <ul>
+        <li><strong>WPA</strong>: Attaque par dictionnaire sur le mot de passe WPA.</li>
+        <li><strong>WEP</strong>: Attaque par dictionnaire sur la clé WEP.</li>
+        <li><strong>WPS</strong>: Tentatives d'attaque via le protocole WPS.</li>
+      </ul>
+
+      <h3>4. Lancer l'attaque par dictionnaire</h3>
+      <p>Pour effectuer une attaque par dictionnaire, utilisez la commande suivante, en spécifiant le fichier de mots de passe à tester (par exemple, `rockyou.txt`) :</p>
+      <div class="code-box">
+wifite --wpa --dict /usr/share/wordlists/rockyou.txt
+      </div>
+      <p>Wifite commencera alors à capturer des paquets des réseaux Wi-Fi à proximité et à tester les mots de passe présents dans le fichier de dictionnaire.</p>
+
+      <h3>5. Attente de la découverte du mot de passe</h3>
+      <p>Wifite va récupérer des trames du réseau cible. Le processus peut prendre un certain temps, car le nombre de paquets capturés varie selon les conditions de chaque attaque. Une fois un nombre suffisant de paquets capturés, l'outil commencera à tester les mots de passe du dictionnaire. Cela peut prendre plusieurs minutes ou plusieurs heures.</p>
+
+      <h3>6. Résultat obtenu</h3>
+      <p>Lorsque Wifite découvre le mot de passe correct, il l'affiche à l'écran. Un exemple de sortie pourrait être :</p>
+      <div class="code-box">
+[+] WPA handshake captured for NetworkName
+[+] Cracking WPA password...
+[+] Found WPA password: password123
+      </div>
+
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Voici quelques captures d'écran illustrant l'attaque avec Wifite :</p>
+      <img src="images/wifite1.png" alt="Scan des réseaux Wi-Fi">
+      <img src="images/wifite2.png" alt="Attaque en cours">
+      <img src="images/wifite3.png" alt="Attaque fini" style="max-width: 86.5%;">
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+Wifite a permis de capturer la clé WPA d'un réseau vulnérable grâce à une attaque par dictionnaire utilisant un fichier de mots de passe communs. Cela montre l'importance de choisir un mot de passe complexe et unique pour la sécurité des réseaux sans fil.
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>Wifite met en évidence les vulnérabilités des réseaux Wi-Fi utilisant des clés faibles ou des protocoles obsolètes comme WEP.</li>
+        <li>Il montre l'importance de la sécurisation des réseaux sans fil par l'utilisation de mots de passe longs et complexes, ainsi que des protocoles de sécurité récents comme WPA3.</li>
+        <li>Il peut être utilisé pour des tests d'audit de sécurité dans un cadre légal sur des réseaux dont vous avez l'autorisation d'accès.</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Source et Références</h3>
+      <p>
+        Wifite est un outil open-source utilisé dans le domaine de la cybersécurité pour tester la sécurité des réseaux Wi-Fi. Il doit être utilisé de manière responsable et toujours avec l'autorisation explicite des propriétaires des réseaux.
+      </p>
+      <ul>
+        <li><a href="https://github.com/derv82/wifite" target="_blank">Page GitHub de Wifite</a></li>
+        <li><a href="https://www.kali.org/tools/wifite/" target="_blank">Documentation officielle sur Kali Linux</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>

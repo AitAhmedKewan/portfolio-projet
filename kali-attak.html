@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet Kali Attack – Portfolio BTS SIO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1e40af;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tool-button {
+      display: inline-block;
+      margin: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .tool-button:hover {
+      background-color: #3749c1;
+    }
+
+    .results-box {
+      background-color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projet Kali Linux – Attaques Réseau</h1>
+    <p>Réalisé en équipe – BTS SIO SISR</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>📍 Présentation</h2>
+      <p>Ce projet a été mené dans le cadre de notre formation BTS SIO, option SISR. Nous avons utilisé Kali Linux pour effectuer des tests d'intrusion et de sécurité réseau sur un environnement contrôlé. Cela inclut le piratage d'une borne Wi-Fi et la réalisation d'attaques DoS sur un serveur Apache2.</p>
+    </section>
+
+    <section>
+      <h2>🔧 Outils étudiés</h2>
+      <p>Chaque bouton ci-dessous vous redirigera vers une page dédiée contenant :</p>
+      <ul>
+        <li>Les commandes utilisées</li>
+        <li>Des captures d’écran</li>
+        <li>Des explications techniques</li>
+        <li>L'utilité et les résultats obtenus</li>
+      </ul>
+      <div>
+        <a class="tool-button" href="hydra.html">🔐 Hydra</a>
+        <a class="tool-button" href="wifite.html">📶 Wifite</a>
+        <a class="tool-button" href="aircrack.html">💨 Aircrack-ng</a>
+        <a class="tool-button" href="slowhttptest.html">🐌 SlowHTTPTest</a>
+        <a class="tool-button" href="zmap.html">📡 Zmap</a>
+        <a class="tool-button" href="hping3.html">🧨 Hping3</a>
+        <a class="tool-button" href="nmap-zenmap.html">🕵️‍♂️ Nmap et Zenmap</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>🎯 Objectifs pédagogiques</h2>
+      <ul>
+        <li>Apprendre à utiliser des outils d'audit réseau</li>
+        <li>Comprendre les vulnérabilités des réseaux Wi-Fi</li>
+        <li>Analyser les effets d'une attaque DoS</li>
+        <li>Appliquer une méthodologie de test d'intrusion</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📊 Résultats obtenus</h2>
+      <div class="results-box">
+- 🔑 Le mot de passe de la borne Wi-Fi a été trouvé avec succès grâce à Wifite et Aircrack-ng.
+- 🌐 L’attaque SlowHTTPTest a réussi à figer temporairement le site Apache2 ciblé.
+- 🧨 Les attaques Hping3 ont généré un trafic anormal détectable dans les journaux du serveur.
+- 🕵️‍♂️ Des ports ouverts ont été identifiés avec Nmap, révélant des services exposés.
+- 🔐 Hydra a permis une simulation de force brute sur un service SSH protégé.
+      </div>
+    </section>
+  </div>
+
+  <div style="text-align: right; max-width: 960px; margin: auto; padding: 1rem;">
+    <a href="projet.html" style="
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    ">⬅️ Retour</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+</body>
+</html>

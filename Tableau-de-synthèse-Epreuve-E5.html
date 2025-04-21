@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Synthèse - Epreuve E5</title>
+    <style>
+        /* Styles pour le footer */
+        footer {
+            background-color: #000000; /* Couleur de fond */
+            color: white; /* Texte en blanc */
+            text-align: center; /* Centrer le texte */
+            padding: 1rem 0; /* Espacement vertical */
+            position: fixed; /* Fixe le footer en bas */
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Styles pour le bouton */
+        .back-button {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background-color: #1e40af;
+            color: white;
+            text-decoration: none;
+            border-radius: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            position: absolute; /* Positionne le bouton par rapport au parent */
+            bottom: 88px; /* Distance du bas de la page, au-dessus du footer */
+            right: 20px; /* Positionne le bouton à droite de l'écran */
+            z-index: 10; /* Assure que le bouton est au-dessus du footer */
+        }
+    </style>
+</head>
+<body>
+    <h1>Tableau de Synthèse - Epreuve E5 - BTS SIO</h1>
+    
+    <!-- Intégration du tableau Google Sheets -->
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSRIoJuOTj4cfMjPVs-msKfrh0qKGqwpUBnG_iV0QqseR0YKtNULywHj7vumZW7Wg/pubhtml" width="100%" height="600px"></iframe>
+
+    <!-- Bouton "Retour" positionné juste au-dessus du footer -->
+    <a href="projet.html" class="back-button">⬅️ Retour</a>
+      
+    <!-- Footer -->
+    <footer>
+        <p>© Ait-Ahmed Kéwan - Portfolio BTS&nbsp;SIO&nbsp;Chantilly</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projet LDAP – Portfolio BTS SIO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1e40af;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    .results-box {
+      background-color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+
+    img {
+      width: 100%;
+      max-width: 70%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .btn-download {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-download:hover {
+      background-color: #3749c1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Projet LDAP - Gestion des utilisateurs avec TurnKey Linux LDAP</h1>
+    <p>Installation et gestion d’un serveur LDAP pour l’authentification des utilisateurs – BTS SIO SISR</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>📍 Présentation du projet</h2>
+      <p>Ce projet consiste à mettre en place un serveur LDAP avec TurnKey Linux LDAP Appliance et à intégrer des machines Ubuntu pour l'authentification des utilisateurs via LDAP. Nous avons exploré l’utilisation des commandes principales : ldapadd, ldapmodify et ldapdelete, tout en configurant un domaine LDAP et en gérant les permissions pour permettre l’ajout d’utilisateurs avec des privilèges sudoers.</p>
+    </section>
+
+    <section>
+      <h2>🧪 Activités réalisées</h2>
+      <ul>
+        <li><strong>Installation du serveur LDAP</strong> via TurnKey Linux LDAP Appliance, avec un domaine défini (dc=XYZ, dc=dom).</li>
+        <li><strong>Création d’utilisateurs</strong> avec les commandes ldapadd et ldapmodify pour ajouter des utilisateurs et mettre à jour leurs informations.</li>
+        <li><strong>Configuration du client LDAP</strong> sur une VM Ubuntu pour permettre l’authentification des utilisateurs via LDAP.</li>
+        <li><strong>Gestion des permissions</strong> pour que les membres d’une unité organisationnelle (OU) soient sudoers et puissent exécuter des commandes avec des privilèges d’administration.</li>
+        <li><strong>Tests d’authentification</strong> des utilisateurs LDAP via le terminal Ubuntu.</li>
+        <li><strong>Exploration des schémas LDAP</strong> et ajout d’attributs personnalisés dans le serveur LDAP.</li>
+        <li><strong>Analyse des connexions LDAP</strong> à l’aide de commandes comme ldapsearch pour vérifier la structure du répertoire et les utilisateurs existants.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔐 Sécurisation et bonnes pratiques</h2>
+      <ul>
+        <li><strong>Utilisation des mécanismes de sécurité LDAP</strong> pour protéger les informations sensibles des utilisateurs lors de l’authentification.</li>
+        <li><strong>Configuration des permissions sudoers</strong> via LDAP pour garantir que seuls les utilisateurs autorisés puissent exécuter des commandes administratives.</li>
+        <li><strong>Utilisation de TLS</strong> pour sécuriser les échanges LDAP.</li>
+        <li><strong>Vérification des utilisateurs et groupes</strong> avec les commandes getent et ldapsearch pour assurer une gestion centralisée et efficace des utilisateurs.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📊 Résultats obtenus</h2>
+      <div class="results-box">
+✅ Serveur LDAP fonctionnel avec ajout et modification d’utilisateurs.
+🖥️ Intégration réussie avec les postes Ubuntu pour l'authentification des utilisateurs via LDAP.
+🔒 Accès restreint aux utilisateurs sudoers dans le domaine LDAP.
+📞 Vérification réussie des informations avec les commandes ldapsearch et getent.
+⚙️ Mise en place d’attributs personnalisés dans le schéma LDAP.
+      </div>
+    </section>
+
+    <section>
+      <h2>📚 Ressources et documentation</h2>
+      <ul>
+        <li><a href="document/TP Découverte LDAP.pdf" class="btn-download">📄 Activité 1 : Installation de TurnKey Linux LDAP et configuration du domaine</a></li>
+        <li><a href="document/TP Découverte LDAP v2.pdf" class="btn-download">📄 Activité 2 : Ajout et gestion d’utilisateurs via LDAP</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <div style="text-align: right; max-width: 960px; margin: auto; padding: 1rem;">
+    <a href="projet.html" style="
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    ">⬅️ Retour</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+</body>
+</html>

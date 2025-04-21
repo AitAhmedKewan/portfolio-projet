@@ -1,0 +1,5 @@
+F:\template2\obj\Debug\net7.0\MonProjet.csproj.AssemblyReference.cache
+F:\template2\obj\Debug\net7.0\MonProjet.GeneratedMSBuildEditorConfig.editorconfig
+F:\template2\obj\Debug\net7.0\MonProjet.AssemblyInfoInputs.cache
+F:\template2\obj\Debug\net7.0\MonProjet.AssemblyInfo.cs
+F:\template2\obj\Debug\net7.0\MonProjet.csproj.CoreCompileInputs.cache

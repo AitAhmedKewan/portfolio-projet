@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hping3 – Outil de Test de Sécurité Réseau</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔍 Hping3 – Outil de Test de Sécurité Réseau</h1>
+    <p>Simule des attaques et analyse la sécurité du réseau</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation</h2>
+      <p>
+        <strong>Hping3</strong> est un outil réseau open-source permettant de créer des paquets TCP/IP personnalisés. Il est principalement utilisé pour tester les firewalls et les IDS/IPS, effectuer des scans de ports, ou encore simuler des attaques réseau telles que des DDoS ou des scans SYN.
+      </p>
+    </section>
+
+    <section>
+      <h2>⚙️ Installation de Hping3</h2>
+      <div class="code-box">
+sudo apt update <br />
+sudo apt install hping3
+      </div>
+      <p>
+        Cette commande permet d'installer <strong>Hping3</strong> sur un système Debian/Kali Linux.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Utilisation de Hping3 – Exemples détaillés</h2>
+
+      <h3>🔸 Scan SYN basique</h3>
+      <div class="code-box">
+hping3 -S 192.168.1.1 -p 80
+      </div>
+      <p>Envoie des paquets SYN sur le port 80 de l'hôte 192.168.1.1 pour tester la réactivité du service.</p>
+
+      <h3>🔸 Scan de port avec hping3 (scan TCP)</h3>
+      <div class="code-box">
+hping3 -S -p 80,443,22 192.168.1.1
+      </div>
+      <p>Envoie des paquets SYN sur les ports 80 (HTTP), 443 (HTTPS) et 22 (SSH).</p>
+
+      <h3>🔸 Simuler une attaque DDoS (Flood SYN)</h3>
+      <div class="code-box">
+hping3 --flood -S -p 80 192.168.1.1
+      </div>
+      <p><code>--flood</code> génère une attaque de type DDoS en envoyant rapidement des paquets SYN à l'hôte cible.</p>
+
+      <h3>🔸 Tester la réponse d'un firewall (SYN Scan)</h3>
+      <div class="code-box">
+hping3 -S -p 80 --scan 1-1024 192.168.1.1
+      </div>
+      <p>Effectue un scan de tous les ports (de 1 à 1024) pour identifier les ports ouverts sur l'hôte cible.</p>
+
+      <h3>🔸 Analyse ICMP (Ping personnalisé)</h3>
+      <div class="code-box">
+hping3 -1 192.168.1.1
+      </div>
+      <p><code>-1</code> envoie un paquet ICMP pour tester la réactivité du réseau à un ping personnalisé.</p>
+
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Exemples de résultats obtenus avec Hping3 :</p>
+      <img src="images/hping3-2.webp" alt="Sortie Hping3 scan SYN" style="max-width: 70%;" />
+      <img src="images/hping3-1.png" alt="Exemple de sortie DDoS avec Hping3" style="max-width: 70%;" />
+      <img src="images/hping3-3.png" alt="Exemple de sortie DDoS avec Hping3" style="max-width: 70%;" />
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+Les tests Hping3 ont permis d'identifier :
+- Les ports ouverts (80, 443, 22)
+- La réactivité du firewall aux attaques SYN
+- Les vulnérabilités potentielles sur le réseau
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>Hping3 est extrêmement utile pour tester la sécurité des réseaux et des serveurs, particulièrement pour simuler des attaques de type SYN flood.</li>
+        <li>Il permet de détecter les faiblesses dans les configurations de firewall et de scanner les ports ouverts sur un réseau.</li>
+        <li>Avec l'option <code>--flood</code>, Hping3 est également utilisé pour tester la résistance aux attaques DDoS.</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Sources et Références</h3>
+      <ul>
+        <li><a href="https://github.com/antirez/hping" target="_blank">Hping3 sur GitHub</a></li>
+        <li><a href="http://www.hping.org/" target="_blank">Site officiel de Hping3</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hydra – Attaque par force brute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    /* Réduction de l'espace dans les sections Source et Références */
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 Hydra – Brute Force Tool</h1>
+    <p>Utilisation dans notre projet de cybersécurité avec Kali Linux</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation de Hydra</h2>
+      <p>
+        Hydra est un outil puissant permettant de réaliser des attaques par force brute contre de nombreux services : SSH, FTP, HTTP, RDP, Telnet, etc.
+        Il permet de tester automatiquement des combinaisons de noms d'utilisateurs et de mots de passe à partir de dictionnaires prédéfinis.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Commandes utilisées</h2>
+      <p>Voici un exemple d'attaque brute force sur un service SSH :</p>
+      <div class="code-box">
+hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://192.168.1.10
+      </div>
+
+      <p>Pour une attaque sur une page web de connexion (formulaire POST) :</p>
+      <div class="code-box">
+hydra -L users.txt -P passwords.txt 192.168.1.10 \http-post-form "/login.php:user=^USER^&pass=^PASS^:Identifiant incorrect"
+      </div>
+
+      <p>Exemple d'une attaque FTP :</p>
+      <div class="code-box">
+hydra -L users.txt -P passwords.txt ftp://192.168.1.10
+      </div>
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Voici quelques illustrations de l’attaque réalisée avec Hydra :</p>
+      <img src="images/hydra-commande-2.png" alt="Commande Hydra en cours d'exécution" style="max-width: 70%;">
+      <img src="images/hydra-commande.png" alt="Résultat avec mot de passe trouvé">
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+Hydra a permis de trouver avec succès le mot de passe d'un utilisateur sur une borne SSH vulnérable.
+Cela prouve la puissance des attaques par dictionnaire et l'importance de choisir des mots de passe forts et non communs.
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>Hydra démontre l'importance de la sécurité des services exposés sur le réseau.</li>
+        <li>Il met en évidence la faiblesse des mots de passe simples ou courants.</li>
+        <li>Hydra peut être utilisé en entreprise pour tester la robustesse des comptes utilisateurs (test d'audit interne).</li>
+        <li>Son usage doit être strictement encadré dans un cadre légal (tests sur réseaux autorisés).</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Source et Références</h3>
+      <p>
+        Hydra est un outil de test de pénétration largement utilisé dans les audits de sécurité. Il est important de noter que son utilisation doit toujours respecter les lois en vigueur et être réalisée avec autorisation sur des réseaux pour lesquels vous avez un droit d'accès.
+      </p>
+      <ul>
+        <li><a href="https://github.com/vanhauser-thc/thc-hydra" target="_blank">Page GitHub de Hydra</a></li>
+        <li><a href="https://www.kali.org/tools/hydra/" target="_blank">Documentation officielle sur Kali Linux</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SlowHTTPTest – Attaque par HTTP lent</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🛑 SlowHTTPTest – Attaque par HTTP Lent</h1>
+    <p>Utilisation dans notre projet de cybersécurité avec Kali Linux</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation de SlowHTTPTest</h2>
+      <p>
+        SlowHTTPTest est un outil de test de résistance des serveurs HTTP aux attaques par déni de service (DoS), en exploitant les vulnérabilités liées à la gestion des connexions lentes, comme le "slowloris".
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Étapes pour utiliser SlowHTTPTest</h2>
+      <p>Voici les étapes pour utiliser SlowHTTPTest dans une attaque de type Slowloris :</p>
+
+      <h3>1. Lancer SlowHTTPTest</h3>
+      <p>Commencez par installer l'outil et lancer une attaque en utilisant les options appropriées pour simuler une connexion HTTP lente :</p>
+      <div class="code-box">
+sudo apt install slowhttptest
+slowhttptest -c 200 -H -g -o test_output
+      </div>
+      <p>Le paramètre -c spécifie le nombre de connexions, -H pour l'attaque Slowloris, -g pour générer un fichier de log, et -o permet de définir le nom de base des fichiers de sortie (logs, graphiques, résultats) qui seront générés automatiquement après le test.</p>
+
+      <h3>2. Attente de l'effet sur le serveur cible</h3>
+      <p>Une fois l'attaque lancée, le serveur cible sera surchargé par un grand nombre de requêtes lentes, ce qui pourra mener à un crash ou à une lenteur extrême des services.</p>
+
+      <h3>3. Résultat obtenu</h3>
+      <p>Une fois l'attaque effectuée, vous pouvez observer l'impact sur les services du serveur cible. Par exemple, le serveur pourra devenir inaccessibile ou ralentir considérablement :</p>
+      <div class="code-box">
+[+] Slow HTTP attack initiated
+[+] Server unresponsive due to slow connections
+      </div>
+
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Voici quelques captures d'écran illustrant l'attaque avec SlowHTTPTest :</p>
+      <img src="images/slowhttptest1.png" alt="SlowHTTPTest Attack" style="max-width: 70%;">
+      <img src="images/slowhttptest2.png" alt="Logs de l'attaque Slowloris" style="max-width: 70%;">
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+L'attaque Slowloris via SlowHTTPTest a permis de rendre le serveur cible lent et non réactif, montrant l'impact des attaques DoS sur la performance du serveur.
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>SlowHTTPTest est un excellent outil pour tester la résilience des serveurs HTTP aux attaques par déni de service.</li>
+        <li>Il met en évidence l'importance de sécuriser les serveurs contre les attaques de type Slowloris et autres attaques par connexions lentes.</li>
+        <li>Il peut également être utilisé pour des audits de sécurité légitimes sur des serveurs HTTP dans un cadre autorisé.</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Source et Références</h3>
+      <p>
+        SlowHTTPTest est un outil open-source utilisé pour tester la sécurité des serveurs HTTP. Il doit être utilisé dans un cadre légal et avec l'autorisation du propriétaire du serveur.
+      </p>
+      <ul>
+        <li><a href="https://github.com/shekyan/slowhttptest" target="_blank">Page GitHub de SlowHTTPTest</a></li>
+        <li><a href="https://www.kali.org/tools/slowhttptest/" target="_blank">Page Kali de SlowHTTPTest</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>

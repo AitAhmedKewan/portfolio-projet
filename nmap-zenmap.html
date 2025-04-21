@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nmap & Zenmap – Scanner réseau avancé</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+
+    header {
+      background-color: #0f172a;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-top: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    .code-box, .results-box {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      font-family: monospace;
+      white-space: pre-wrap;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    .code-box {
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    a.back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #0f172a;
+    }
+
+    .source-section {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #e1e3e8;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .source-section h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .source-section p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔍 Nmap & Zenmap – Scanner Réseau Avancé</h1>
+    <p>Analyse complète des ports et services pour les tests de sécurité</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>📘 Présentation</h2>
+      <p>
+        <strong>Nmap</strong> (Network Mapper) est un scanner réseau open-source permettant de détecter les hôtes actifs, les ports ouverts, les services en cours d'exécution, les systèmes d'exploitation, etc.
+        <br><br>
+        <strong>Zenmap</strong> est l'interface graphique de Nmap, idéale pour les débutants ou ceux qui préfèrent une visualisation plus intuitive.
+      </p>
+    </section>
+
+    <section>
+      <h2>⚙️ Installation de Nmap et Zenmap</h2>
+      <div class="code-box">
+sudo apt update <br />
+sudo apt install nmap <br />
+# Zenmap nécessite parfois une installation manuelle : <br />
+sudo apt install python2 <br />
+wget https://nmap.org/dist/zenmap-7.93-1.noarch.deb <br />
+sudo dpkg -i zenmap-7.93-1.noarch.deb <br />
+sudo apt --fix-broken install
+      </div>
+      <p>
+        Cette commande installe le scanner en ligne de commande <code>nmap</code> sur Debian/Kali Linux. Zenmap, cependant, nécessite une installation manuelle sur les versions récentes.
+      </p>
+    </section>
+
+    <section>
+      <h2>💻 Utilisation de Nmap – Exemples détaillés</h2>
+
+      <h3>🔸 Scan de base sur un hôte</h3>
+      <div class="code-box">
+nmap 192.168.1.1
+      </div>
+      <p>Scan rapide sur l'adresse IP pour détecter les ports ouverts par défaut.</p>
+
+      <h3>🔸 Scan d'une plage IP (réseau local)</h3>
+      <div class="code-box">
+nmap 192.168.1.0/24
+      </div>
+      <p>Scan tous les hôtes d'un sous-réseau pour voir qui est actif et détecter les ports ouverts.</p>
+
+      <h3>🔸 Scan avancé avec détection de services</h3>
+      <div class="code-box">
+nmap -sS -sV -O -A 192.168.1.1
+      </div>
+      <p><strong>Détails :</strong></p>
+      <ul>
+        <li><code>-sS</code> : Scan SYN furtif (souvent non détecté par les firewalls)</li>
+        <li><code>-sV</code> : Détection de version des services (ex: Apache 2.4.18)</li>
+        <li><code>-O</code> : Tente d’identifier le système d’exploitation (OS fingerprinting)</li>
+        <li><code>-A</code> : Active toutes les options ci-dessus + script NSE + traceroute</li>
+      </ul>
+
+      <h3>🔸 Scan d’un port spécifique</h3>
+      <div class="code-box">
+nmap -p 22 192.168.1.1
+      </div>
+      <p><code>-p</code> spécifie le port à analyser (ici SSH sur le port 22).</p>
+
+      <h3>🔸 Scan multiple ports</h3>
+      <div class="code-box">
+nmap -p 21,22,80,443 192.168.1.1
+      </div>
+      <p>Scan uniquement les ports spécifiés (FTP, SSH, HTTP, HTTPS).</p>
+
+      <h3>🔸 Exporter les résultats dans un fichier</h3>
+      <div class="code-box">
+nmap -oN scan_result.txt 192.168.1.1
+      </div>
+      <p><code>-oN</code> permet de sauvegarder les résultats dans un fichier texte classique.</p>
+
+    </section>
+
+    <section>
+      <h2>🖼️ Captures d'écran</h2>
+      <p>Interface Zenmap et Nmap montrant un scan réseau :</p>
+      <img src="images/zenmap2.png" alt="Interface de Zenmap avec résultat de scan" style="max-width: 70%;" />
+      <img src="images/nmap1.webp" alt="Exemple de sortie Nmap en terminal" style="max-width: 70%;" />
+    </section>
+
+    <section>
+      <h2>🎯 Résultat obtenu</h2>
+      <div class="results-box">
+Les tests Nmap ont permis d'identifier :
+- Les ports ouverts (22, 80, 443)
+- Les services actifs (Apache, SSH)
+- Le système d’exploitation probable (Linux 5.x)
+- Des scripts NSE ont révélé des infos sur SSL et HTTP
+      </div>
+    </section>
+
+    <section>
+      <h2>🧠 Analyse et utilité</h2>
+      <ul>
+        <li>Nmap est l'outil de base indispensable en audit réseau.</li>
+        <li>Il permet de cartographier un réseau et identifier les vulnérabilités potentielles.</li>
+        <li>Zenmap est utile pour les débutants ou pour conserver un historique graphique.</li>
+        <li>L’option <code>-A</code> permet une analyse complète (très utile lors d’un pentest).</li>
+      </ul>
+    </section>
+
+    <section class="source-section">
+      <h3>📚 Sources et Références</h3>
+      <ul>
+        <li><a href="https://nmap.org/" target="_blank">Site officiel Nmap</a></li>
+        <li><a href="https://nmap.org/book/man.html" target="_blank">Documentation complète</a></li>
+        <li><a href="https://nmap.org/zenmap/" target="_blank">Zenmap</a></li>
+      </ul>
+    </section>
+
+    <a class="back-button" href="kali-attak.html">⬅️ Retour au projet</a>
+  </div>
+
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
+
+</body>
+</html>
