@@ -1,262 +1,274 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-    <meta name="robots" content="noindex,nofollow,noarchive,nocache" />
-    <meta name="robots" content="noimageindex">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certification Networking Academy – TCP/IP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem 3rem;
+    }
+
+    section {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #1e40af;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: #1e3a8a;
+      margin-top: 1.5rem;
+    }
+
+    h4 {
+      color: #1e40af;
+      margin-top: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    ul {
+      margin-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: #1e40af;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin: 1.5rem 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      display: block;
+    }
+
+    img.badge {
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+
+    img.big-img {
+      max-width: 800px;
+      margin: 1rem auto;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.3rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .btn-retour:hover {
+      background-color: #1c3bb0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #1e293b;
+    }
+  </style>
 </head>
 <body>
 
+  <header>
+    <h1>Certification Networking Academy</h1>
+    <p>Formation TCP/IP – OpenClassRooms</p>
+  </header>
 
-    <!-- header -->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html">
-                    Ait-Ahmed Kéwan
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarScroll" style="margin: -300px;">
-                    <ul class="navbar-nav ms-auto me-2 my-2 my-lg-0 navbar-nav-scroll">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
-                        </li>
-        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Certification <i class="fas fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="dropdown-item" href="htmlcss.html">HTML5 - CSS 3</a></li>
-                                <li><a class="dropdown-item" href="RGPD.html">Les ateliers de la CNIL - RGPD</a></li>
-                                <li><a class="dropdown-item" href="Cybersécurité.html">La Cybersécurité</a></li>
-                                <li><a class="dropdown-item" href="TCP-IP.html">TCP/IP</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="projet.html">Projet</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="veille.html">Veille Technologique</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="rapport_stage.html">Rapport de stage</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- //header -->
+  <div class="container">
 
-
-<br><br><br><br><br>
-
-
-    <section class="blog-post-main">
-        <div class="blog-content-inf py-5">
-            <div class="container py-md-5 py-4">
-                <div class="blog-posthny-info mx-auto" style="max-width:800px">
-                    <div class="style-title position-relative">
-                        <h3 class="title-style mb-sm-3 mb-2"><span>Certification TCP/IP</span></h3>
-
-                    </div>
-
-
-                    <div class="single-post-content">
-                        <p class="mb-4">
-                            Dans cette formation, j'ai appris à utiliser le protocole TCP/IP, qui est à la base de toutes les communications sur les réseaux informatiques et essentiel pour assurer l'interconnexion des systèmes.</p>
-                    <span class="course-number"><span class="fa fa-graduation-cap" aria-hidden="true"></span> Formation OpenClassRooms</span>
-                    <br><p class="sub-para">Lien internet : <a href="https://openclassrooms.com/fr/courses/6944606-concevez-votre-reseau-tcp-ip" target="_blank">https://openclassrooms.com/fr/courses/6944606-concevez-votre-reseau-tcp-ip</a>.</p><br>
-
-                        <p class="mb-4">
-                            <img src="images/Barre-de-progression-TCP-IP.png" class="img-fluid img-curve my-2" style="max-width: 110%;" alt="" />
-                            <h4>Mes objectifs</h4>
-
-                      <ul>
-                        <li><img src="images/check.png" alt="tick"> Créez l’architecture physique de votre réseau</li>
-                        <li><img src="images/check.png" alt="tick"> Configurez votre réseau pour assurer la communication</li>
-                        <li><img src="images/check.png" alt="tick"> Optimisez votre réseau en ajoutant des services</li>
-                        <li><img src="images/check.png" alt="tick"> Consevoir un reseau TCP/IP</li>
-                      </ul>
-
-                    <div class="course-details mt-5">
-                      <h4>Pourquoi cette formation ?</h4>
-                      <ol>
-                        <li>-Prendre du savoir et du savoir-faire en liaison avec ma formation en BTS&nbsp;SIO</li>
-                        <li>-Me servir lors de mon stage où au BTS</li>
-                        <li>-Compétences qui me serviront dans mon futur professionnel</li>
-                        <li>-Comprendre les bases de l’administration réseau pour mieux gérer des infrastructures complexes</li>
-                        <li>-Savoir configurer et sécuriser un réseau local et étendu</li>
-                        <li>-Apprendre à travailler avec des outils et technologies actuels (switches, routeurs, VLANs, etc.)</li>
-                        <li>-Se préparer aux certifications professionnelles liées aux réseaux (comme Cisco CCNA, etc.)</li>
-                      </ol>
-                    </div>
-
-                    <div class="course-details mt-5">
-                      <h4>Les outils que j'ai utilisé </h4>
-                      <ol>
-                      <li>-Navigateur WEB<br></li>
-                      <li>-Cisco Packet Tracer</li>
-                      </ol>
-
-                    </div>
-
-
-                    <div class="course-details  mt-5">
-                      <h4>Quelques notions à travers des images</h4>
-                      <b><u>Communication réseau avec TCP/IP </u></b> <br>
-                      Le protocole TCP/IP est la base de toutes les communications sur les réseaux informatiques. Il permet d’assurer l’interconnexion entre différents équipements tels que les ordinateurs, les serveurs et les périphériques réseau (switches, routeurs, etc.).<br>
-                      Dans une architecture réseau comme celle illustrée, TCP/IP joue un rôle central en permettant :<br>
-                      -La transmission des données entre les équipements (par exemple, entre le serveur et les postes clients).<br>
-                      -La segmentation et la gestion des données pour une communication fiable.<br>
-                      -L’identification des appareils grâce à leurs adresses IP uniques.<br>
-                      Cette architecture se compose d’un serveur, d’un routeur, de switches, et de plusieurs postes clients. Le protocole TCP/IP assure la communication entre tous ces appareils en définissant les règles nécessaires pour envoyer et recevoir des paquets de données efficacement.<br>
-                      Ainsi, la maîtrise de TCP/IP est essentielle pour concevoir, configurer et optimiser un réseau informatique capable de répondre aux besoins d’une organisation.<br>
-                      <img src="images/Cisco-TCP.png" class="img-fluid img-curve my-3" alt="" />
-                      <p class="mb-4">Le modèle OSI et le modèle TCP/IP sont deux références fondamentales dans le domaine des réseaux.</p>
-                      <u><b>Avantages du modèle TCP/IP :</b></u>
-                      <ol>
-                      -Il simplifie la communication en regroupant certaines couches du modèle OSI, comme les couches Application, Présentation et Session, en une seule couche Application.<br>
-                      -Il est universellement utilisé et standardisé, permettant ainsi l’interopérabilité entre différents appareils et systèmes.<br>
-                      -Grâce au protocole TCP, il offre une transmission fiable des données, assurant que les informations envoyées arrivent intactes à destination.<br>
-                      -Il est flexible et peut s'adapter à différents types de matériels et de réseaux.<br>
-                      </ol>
-                      <u><b>Avantages du modèle OSI :</b></u>
-                      <ol>
-                      -Ce modèle divise les processus de communication en sept couches distinctes, rendant le dépannage et l’analyse des réseaux plus simples.<br>
-                      -Bien qu’il ne soit pas directement utilisé en pratique, il constitue une base théorique idéale pour apprendre et comprendre les réseaux.<br>
-                      -Chaque couche ayant un rôle spécifique, il favorise une approche modulaire de la conception des systèmes réseau.<br>
-                      </ol>
-                      <p class="mb-4">Le modèle OSI est souvent utilisé pour l’enseignement des concepts réseau, tandis que le modèle TCP/IP s’applique directement à la communication sur Internet.</p>
-                      <img src="images/Modem-TCP-IP.png" class="img-fluid img-curve my-2" alt="" />
-                      <p class="mb-4">Dans un réseau utilisant le protocole TCP/IP, les cartes réseau jouent un rôle fondamental pour assurer la communication entre les appareils. Cette image illustre différents types de cartes réseau, leurs ports associés, leurs supports de transmission, et les normes générales qui les régissent.</p>
-                      <u><b>Cartes réseau en cuivre :</b></u>
-                      <ol>
-                      -Utilisent un port RJ45.<br>
-                      -S’appuient sur des câbles en cuivre à paire torsadée pour transmettre les données.<br>
-                      -Norme : IEEE 802.3 (Ethernet), très répandue dans les réseaux locaux (LAN).<br>
-                      </ol>
-                      <u><b>Cartes réseau optiques :</b></u>
-                      <ol>
-                      -Connectées via des ports spécifiques comme GBIC, SFP, SFP+, ou XFP.<br>
-                      -Transmettent les données sur des fibres optiques, offrant une grande vitesse et une longue portée.<br>
-                      -Norme : IEEE 802.3 (Ethernet), principalement utilisée dans les infrastructures backbone ou pour interconnecter des équipements à grande distance.<br>
-                      </ol>
-                      <u><b>Cartes réseau sans fil (Wi-Fi) :</b></u>
-                      <ol>
-                      -Ne nécessitent aucun port physique.<br>
-                      -Transmettent les données via les ondes radio dans l'air.<br>
-                      -Norme : IEEE 802.11 (WLAN), utilisée pour les réseaux locaux sans fil.<br>
-                      </ol>
-                      <img src="images/PriseTCP.png" class="img-fluid img-curve my-2" alt="" />
-                      <img src="images/PuissanceTCP.png" class="img-fluid img-curve my-2" alt="" />
-                      <p class="mb-4">Ces différentes technologies permettent d'adapter la communication réseau aux besoins spécifiques en termes de vitesse, distance, et environnement. Le protocole TCP/IP fonctionne indépendamment du type de carte ou de support, assurant une compatibilité universelle entre les équipements.</p>
-                      </div>
-                      </p>
-
-
-                </div>
-            </div>
-             </div>
-        </div>
-
-
+    <!-- 1. Présentation avec lien + badge -->
+    <section>
+      <h2>📘 Présentation de la formation</h2>
+      <p>
+        Dans cette formation, j'ai appris à utiliser le protocole TCP/IP, qui est à la base de toutes les communications sur les réseaux informatiques et essentiel pour assurer l'interconnexion des systèmes.
+      </p>
+      <p><strong>Plateforme :</strong> <a href="https://openclassrooms.com/fr/courses/6944606-concevez-votre-reseau-tcp-ip" target="_blank" rel="noopener">OpenClassRooms – Formation TCP/IP</a></p>
+      <img src="images/SC-TCP-IP.png" alt="Certification TCP/IP Networking Academy">
     </section>
 
-<div style="margin: 8px auto; display: block; text-align:center;"></div>
+    <!-- 2. Mes objectifs -->
+    <section>
+      <h2>🎯 Mes objectifs</h2>
+      <ul>
+        <li>Prendre du savoir et du savoir-faire en liaison avec ma formation en BTS SIO</li>
+        <li>Me servir lors de mon stage où au BTS</li>
+        <li>Compétences qui me serviront dans mon futur professionnel</li>
+        <li>Comprendre les bases de l’administration réseau pour mieux gérer des infrastructures complexes</li>
+        <li>Savoir configurer et sécuriser un réseau local et étendu</li>
+        <li>Apprendre à travailler avec des outils et technologies actuels (switches, routeurs, VLANs, etc.)</li>
+        <li>Se préparer aux certifications professionnelles liées aux réseaux (comme Cisco CCNA, etc.)</li>
+      </ul>
+    </section>
 
-    <footer class="w3l-footer-29-main">
-        <div class="footer-29 pt- pb-4">
-                <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2">© Ait-Ahmed Kéwan - Portfolio BTS&nbsp;SIO&nbsp;Chantilly</p>
-        </div>
-    </footer>
+    <!-- 3. Pourquoi cette formation -->
+    <section>
+      <h2>❓ Pourquoi cette formation ?</h2>
+      <ul>
+        <li>Acquérir des connaissances utiles et en lien avec mon cursus BTS SIO</li>
+        <li>Appliquer ces compétences en environnement professionnel et lors de stages</li>
+        <li>Renforcer ma compréhension des réseaux et de leur fonctionnement</li>
+        <li>Préparer des certifications professionnelles reconnues</li>
+      </ul>
+    </section>
 
+    <!-- 4. Outils utilisés -->
+    <section>
+      <h2>🛠️ Outils utilisés</h2>
+      <ul>
+        <li>Navigateur web</li>
+        <li>Cisco Packet Tracer</li>
+      </ul>
+    </section>
 
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
-    </button>
-    <script>
+    <!-- 5. Notions illustrées -->
+    <section>
+      <h2>📌 Notions illustrées</h2>
+      <p>
+        Le protocole TCP/IP est la base de toutes les communications sur les réseaux informatiques. Il permet d’assurer l’interconnexion entre différents équipements tels que les ordinateurs, les serveurs et les périphériques réseau (switches, routeurs, etc.).
+      </p>
+      <p>
+        Dans une architecture réseau comme celle illustrée, TCP/IP joue un rôle central en permettant :
+      </p>
+      <ul>
+        <li>La transmission des données entre les équipements (par exemple, entre le serveur et les postes clients).</li>
+        <li>La segmentation et la gestion des données pour une communication fiable.</li>
+        <li>L’identification des appareils grâce à leurs adresses IP uniques.</li>
+      </ul>
+      <p>
+        Cette architecture se compose d’un serveur, d’un routeur, de switches, et de plusieurs postes clients. Le protocole TCP/IP assure la communication entre tous ces appareils en définissant les règles nécessaires pour envoyer et recevoir des paquets de données efficacement.
+      </p>
+      <p>
+        Ainsi, la maîtrise de TCP/IP est essentielle pour concevoir, configurer et optimiser un réseau informatique capable de répondre aux besoins d’une organisation.
+      </p>
+      <img src="images/Cisco-TCP.png" alt="Architecture réseau TCP/IP" class="big-img" />
 
-        window.onscroll = function () {
-            scrollFunction()
-        };
+      <h3>Modèles OSI & TCP/IP</h3>
+      <p>Le modèle OSI et le modèle TCP/IP sont deux références fondamentales dans le domaine des réseaux.</p>
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("movetop").style.display = "block";
-            } else {
-                document.getElementById("movetop").style.display = "none";
-            }
-        }
+      <h4>Avantages du modèle TCP/IP :</h4>
+      <ul>
+        <li>Il simplifie la communication en regroupant certaines couches du modèle OSI, comme les couches Application, Présentation et Session, en une seule couche Application.</li>
+        <li>Il est universellement utilisé et standardisé, permettant ainsi l’interopérabilité entre différents appareils et systèmes.</li>
+        <li>Grâce au protocole TCP, il offre une transmission fiable des données, assurant que les informations envoyées arrivent intactes à destination.</li>
+        <li>Il est flexible et peut s'adapter à différents types de matériels et de réseaux.</li>
+      </ul>
 
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
+      <h4>Avantages du modèle OSI :</h4>
+      <ul>
+        <li>Ce modèle divise les processus de communication en sept couches distinctes, rendant le dépannage et l’analyse des réseaux plus simples.</li>
+        <li>Bien qu’il ne soit pas directement utilisé en pratique, il constitue une base théorique idéale pour apprendre et comprendre les réseaux.</li>
+        <li>Chaque couche ayant un rôle spécifique, il favorise une approche modulaire de la conception des systèmes réseau.</li>
+      </ul>
+      <p>
+        Le modèle OSI est souvent utilisé pour l’enseignement des concepts réseau, tandis que le modèle TCP/IP s’applique directement à la communication sur Internet.
+      </p>
+      <img src="images/Modem-TCP-IP.png" alt="Modèle OSI vs TCP/IP" class="big-img" />
 
-    <script src="js/jquery-3.3.1.min.js"></script>
+      <p>
+        Dans un réseau utilisant le protocole TCP/IP, les cartes réseau jouent un rôle fondamental pour assurer la communication entre les appareils. Cette image illustre différents types de cartes réseau, leurs ports associés, leurs supports de transmission, et les normes générales qui les régissent.
+      </p>
 
-    <script src="js/jquery.min.js"></script>
+      <h4>Cartes réseau en cuivre :</h4>
+      <ul>
+        <li>Utilisent un port RJ45.</li>
+        <li>S’appuient sur des câbles en cuivre à paire torsadée pour transmettre les données.</li>
+        <li>Norme : IEEE 802.3 (Ethernet), très répandue dans les réseaux locaux (LAN).</li>
+      </ul>
 
-  
+      <h4>Cartes réseau optiques :</h4>
+      <ul>
+        <li>Connectées via un port SFP (Small Form-factor Pluggable).</li>
+        <li>Utilisent la fibre optique pour des transmissions sur de longues distances avec des débits élevés.</li>
+        <li>Norme : IEEE 802.3z (Gigabit Ethernet sur fibre).</li>
+      </ul>
+      <img src="images/PriseTCP.png" alt="Cartes réseau cuivre et optique" class="big-img" />
+      <img src="images/PuissanceTCP.png" alt="Cartes réseau cuivre et optique" class="big-img" />
+    </section>
 
+    <!-- 6. Compétences développées -->
+    <section>
+      <h2>💪 Compétences développées</h2>
+      <ul>
+        <li>Maîtrise des fondamentaux du protocole TCP/IP</li>
+        <li>Configuration et gestion des équipements réseau (switches, routeurs)</li>
+        <li>Compréhension des modèles réseau OSI et TCP/IP</li>
+        <li>Sécurisation des réseaux locaux et étendus</li>
+        <li>Utilisation d'outils de simulation comme Cisco Packet Tracer</li>
+        <li>Capacité à diagnostiquer et résoudre des problèmes réseau</li>
+      </ul>
+    </section>
 
+    <!-- 7. Conclusion -->
+    <section>
+      <h2>🔚 Conclusion</h2>
+      <p>
+        Cette formation m’a permis de mieux comprendre les protocoles fondamentaux du réseau, essentiels pour toute infrastructure informatique moderne. Grâce à ces acquis, je suis plus à l’aise pour intervenir sur des réseaux locaux ou étendus et me préparer aux certifications professionnelles du domaine.
+      </p>
+      <p>
+        Cette base solide constitue un atout majeur pour ma carrière dans l’administration des systèmes et réseaux.
+      </p>
+    </section>
 
-    <script>
-        $(window).on("scroll", function () {
-            var scroll = $(window).scrollTop();
+    <div style="text-align: right;">
+      <a href="index.html" class="btn-retour">⬅️ Retour</a>
+    </div>
 
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
+  </div>
 
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function () {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function () {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function () {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-    </script>
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS SIO Chantilly</p>
+  </footer>
 
-    <script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            })
-        });
-    </script>
-
-    <script src="js/bootstrap.min.js"></script>
-
-
-
-	</body>
-
+</body>
 </html>

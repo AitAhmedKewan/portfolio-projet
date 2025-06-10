@@ -1,230 +1,209 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-    <meta name="robots" content="noindex,nofollow,noarchive,nocache" />
-    <meta name="robots" content="noimageindex">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Certification Networking Academy – Cybersécurité</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e293b;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+
+    h2, h3, h4 {
+      color: #1e40af;
+      margin-top: 1rem;
+    }
+
+    a {
+      color: #1e40af;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+
+    ul li::before {
+      content: "✔️ ";
+      margin-right: 0.5rem;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #1e40af;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .btn-retour:hover {
+      background-color: #1e3a8a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: white;
+      background-color: #1e293b;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <header>
+    <h1>Certification Networking Academy</h1>
+    <p>Formation en cybersécurité – Cisco NetAcad</p>
+  </header>
 
-    <!-- header -->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html">
-                    Ait-Ahmed Kéwan
-                </a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarScroll" style="margin: -300px;">
-                    <ul class="navbar-nav ms-auto me-2 my-2 my-lg-0 navbar-nav-scroll">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
-                        </li>
-        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Certification <i class="fas fa-angle-down"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                <li><a class="dropdown-item" href="htmlcss.html">HTML5 - CSS 3</a></li>
-                                <li><a class="dropdown-item" href="RGPD.html">Les ateliers de la CNIL - RGPD</a></li>
-                                <li><a class="dropdown-item" href="Cybersécurité.html">La Cybersécurité</a></li>
-                                <li><a class="dropdown-item" href="TCP-IP.html">TCP/IP</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="projet.html">Projet</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="veille.html">Veille Technologique</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="rapport_stage.html">Rapport de stage</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </header>
-    <!-- //header -->
+  <div class="container">
 
-
-<br><br><br><br><br>
-
-
-    <section class="blog-post-main">
-        <div class="blog-content-inf py-5">
-            <div class="container py-md-5 py-4">
-                <div class="blog-posthny-info mx-auto" style="max-width:800px">
-                    <div class="style-title position-relative">
-                        <h3 class="title-style mb-sm-3 mb-2"><span>Certification Networking academy</span></h3>
-
-                    </div>
-
-
-                    <div class="single-post-content">
-                        <p class="mb-4">Ce nouveau support de formation a pour objectif de sensibiliser les utilisateurs en milieu professionnel à la sécurité du numérique afin qu’ils deviennent acteurs de leur sécurité et de celle de leur entreprise.
-                        Grâce à ce MOOC, j'ai pu apprendre et assimiler des notions de base de la sécurité des systèmes d’information (SSI) utiles au travail comme à la maison.</p>
-                    <span class="course-number"><span class="fa fa-graduation-cap" aria-hidden="true"></span> Formation Cyber-sécurité</span>
-                    <p class="sub-para">Lien internet : <a href="https://www.netacad.com/fr/courses/introduction-to-cybersecurity?courseLang=fr-FR&instance_id=2852cafa-2958-4cdf-b728-81fbb9611dca" target="_blank">https://www.netacad.com/fr/courses/introduction-to-cybersecurity?courseLang=fr-FR&instance_id=2852cafa-2958-4cdf-b728-81fbb9611dca</a>.</p><br>
-
-                <p class="mb-4">
-                    <img src="images/Cybersécurité Badge.png" class="img-fluid img-curve my-2" style="max-width: 110%;" alt="" />
-                            <h4>Mes objectifs</h4>
-
-                       <ul>
-                        <li><img src="images/check.png" alt="tick"> Comprendre les fondamentaux de la cybersécurité </li>
-                        <li><img src="images/check.png" alt="tick"> Appliquer les meilleures pratiques de sécurité </li>
-                        <li><img src="images/check.png" alt="tick"> Créer un environnement réseau sécurisé  </li>
-                        <li><img src="images/check.png" alt="tick"> Acquérir des compétences en configuration de réseau  </li>
-                        <li><img src="images/check.png" alt="tick"> Renforcer les compétences en gestion des menaces  </li>
-                        <li><img src="images/check.png" alt="tick"> Maîtriser la surveillance et la détection des incidents  </li>
-                      </ul>
-
-                    <div class="course-details mt-5">
-                      <h4>Pourquoi cette formation ?</h4>
-                      <ol>
-                        <li>-Prendre du savoir et du savoir-faire en liaison avec ma formation en BTS&nbsp;SIO.</li>
-                        <li>-Me servir lors de mon stage pour mettre en pratique les compétences apprises.</li>
-                        <li>-Acquérir des compétences qui me serviront dans mon futur professionnel.</li>
-                        <li>-Renforcer ma compréhension des enjeux de sécurité dans les réseaux.</li>
-                        <li>-Apprendre à identifier, prévenir et gérer les menaces informatiques.</li>
-                        <li>-Développer une expertise pour répondre aux exigences de sécurité des entreprises.</li>
-                      </ol>
-                    </div>
-
-                    <div class="course-details mt-5">
-                      <h4>Les outils que j'ai utilisé </h4>
-                      <ol>
-                      <li>-Navigateur WEB<br></li>
-                      </ol>
-                    </div>
-
-
-                    <div class="course-details  mt-5">
-                      <h4>Quelques notions à travers des images</h4>
-                      <p class="mb-4">En cybersécurité, une politique de sécurité est un modèle pour protéger les ressources d'un système informatique. Elle permet de définir des règles et des pratiques de sécurité pour assurer la protection des données, des réseaux et des utilisateurs, garantissant ainsi une gestion efficace et fiable des risques.</p>
-                      <img src="images/introduction-to-cybersecurity.png" class="img-fluid img-curve my-3" alt style= "max-width: 45%;"/>
-
-                      <p class="mb-4"><u><b>Certificat</b></u> de l'indroduction de cybersécurité.</p>
-                          <img src="images/Malware.png" class="img-fluid img-curve my-3" alt="" />
-
-                      <p class="mb-4">Les différents types de malware (logiciels malveillants), utilisés par les cybercriminels pour diverses activités nuisibles, telles que le vol de données ou la compromission de systèmes. Elle énumère plusieurs types de malware, y compris :</p>
-                      -<u><b>Logiciel espion (spyware)</b></u>, qui permet de collecter secrètement des informations sur un utilisateur sans son consentement.<br>
-                      -<u><b>Logiciel publicitaire (adware)</b></u>, qui génère des publicités intrusives sur les appareils infectés.<br>
-                      -<u><b>Porte dérobée (backdoor)</b></u>, un type de malware permettant à un attaquant d'accéder à un système à distance sans être détecté.<br>
-                      -<u><b>Rançongiciel (ransomware)</b></u>, qui crypte les données d'un utilisateur ou d'une organisation, exigeant une rançon pour les débloquer.<br>
-                      -<u><b>Alarme logiciel (scareware)</b></u>, conçu pour effrayer l'utilisateur en affichant de fausses alertes de sécurité afin de l'inciter à acheter des solutions inutiles.<br>
-                      -<u><b>Rootkit</b></u>, qui permet à un attaquant de cacher des processus malveillants dans un système afin de maintenir un contrôle furtif.<br>
-                      -<u><b>Virus</b></u>, un programme malveillant capable de se propager en infectant d'autres fichiers et programmes.<br>
-                          <img src="images/Attaque-MDP.png" class="img-fluid img-curve my-3" alt="" />
-
-                      <p class="mb-4">Les différentes attaques de mot de passe, qui sont des méthodes utilisées par les cybercriminels pour accéder illégalement à des comptes en ligne en découvrant les mots de passe des utilisateurs. Ces attaques sont courantes car l'authentification par mot de passe est l'une des formes les plus répandues d'accès aux systèmes. Voici les types d'attaques de mot de passe :</p>
-                      -<u><b>Diffusion de mot de passe </b></u>: Cela fait référence à la fuite ou à la divulgation non autorisée de mots de passe via des méthodes telles que les violations de données ou les piratages de bases de données.<br>
-                      -<u><b>Attaque dictionnaire </b></u>: Cette méthode utilise une liste de mots courants ou de phrases pour essayer de deviner un mot de passe, souvent basée sur les mots les plus fréquemment utilisés par les utilisateurs.<br>
-                      -<u><b>Attaques par force brute </b></u>: Il s'agit d'une technique où l'attaquant essaie toutes les combinaisons possibles de mots de passe jusqu'à trouver la bonne, ce qui peut être très long si le mot de passe est complexe.<br>
-                      -<u><b>Attaques arc-en-ciel </b></u>: Une attaque utilisant des "tables arc-en-ciel", qui sont des tables pré-calculées de mots de passe hashés. Cela permet de réduire le temps nécessaire pour casser un mot de passe.<br>
-                      -<u><b>Interception du trafic </b></u>: Cela implique l'écoute du trafic réseau pour capturer les mots de passe lorsqu'ils sont envoyés entre un utilisateur et un serveur, souvent si la connexion n'est pas sécurisée.<br>
-
-                          <img src="images/#" class="img-fluid img-curve my-3" alt="" />
-                      </div>
-
-                </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <section>
+      <h2>📘 Présentation</h2>
+      <p>
+        Cette formation aborde les bases de la cybersécurité : menaces courantes, bonnes pratiques, cryptographie, attaques de mots de passe, et plus encore.
+      </p>
+      <p><strong>Plateforme :</strong> 🎓 Cisco Networking Academy</p>
+      <p>Lien : <a href="https://www.netacad.com/fr/courses/introduction-to-cybersecurity?courseLang=fr-FR" target="_blank" rel="noopener noreferrer">Voir la formation</a></p>
+      <img src="images/Cybersécurité Badge.png" alt="Badge de certification Cybersécurité Cisco" />
     </section>
 
-<div style="margin: 8px auto; display: block; text-align:center;"></div>
+    <section>
+      <h2>🎯 Objectifs de la formation</h2>
+      <ul>
+        <li>Sensibiliser aux risques numériques actuels</li>
+        <li>Comprendre les enjeux de la cybersécurité</li>
+        <li>Adopter les bons réflexes en entreprise et à domicile</li>
+      </ul>
+    </section>
 
-    <footer class="w3l-footer-29-main">
-        <div class="footer-29 pt-1 pb-4">
-                <p class="copy-footer-29 text-center pt-lg-2 mt-5 pb-2">© Ait-Ahmed Kéwan - Portfolio BTS&nbsp;SIO&nbsp;Chantilly</p>
-        </div>
-    </footer>
+    <section>
+      <h2>❓ Pourquoi cette formation ?</h2>
+      <p>
+        Dans le cadre de mon BTS SIO, j'ai choisi cette formation car la cybersécurité est un pilier essentiel de l’informatique moderne. Protéger les données, comprendre les menaces, et savoir réagir face à une attaque sont des compétences indispensables.
+      </p>
+      <p>
+        La certification Cisco est reconnue mondialement et constitue un atout professionnel important.
+      </p>
+    </section>
 
+    <section>
+      <h2>🛠️ Outils utilisés</h2>
+      <ul>
+        <li>Plateforme <strong>Cisco Networking Academy</strong></li>
+        <li>Navigateur web (Chrome, Firefox)</li>
+        <li>Ressources pédagogiques Cisco (vidéos, quizz, illustrations)</li>
+      </ul>
+    </section>
 
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-        <span class="fas fa-level-up-alt" aria-hidden="true"></span>
-    </button>
-    <script>
+    <section>
+      <h2>🧠 Compétences développées</h2>
+      <ul>
+        <li>Comprendre les types de menaces (malware, phishing, ransomware...)</li>
+        <li>Appliquer les bonnes pratiques de sécurité</li>
+        <li>Analyser les risques liés aux réseaux et postes utilisateurs</li>
+        <li>Découvrir le chiffrement et les pare-feux</li>
+      </ul>
+    </section>
 
-        window.onscroll = function () {
-            scrollFunction()
-        };
+    <section>
+      <h2>🖼️ Notions illustrées</h2>
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("movetop").style.display = "block";
-            } else {
-                document.getElementById("movetop").style.display = "none";
-            }
-        }
+      <p><strong>Politique de sécurité :</strong> Ensemble de règles pour protéger les ressources et utilisateurs.</p>
+      <img src="images/CyberSV.png" alt="Introduction à la cybersécurité" />
 
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
+      <h3>📌 Types de malware</h3>
+      <img src="images/Malware.png" alt="Illustration des types de malware" />
 
-    <script src="js/jquery-3.3.1.min.js"></script>
+      <ul>
+        <li><strong>Spyware :</strong> Logiciel espion qui collecte vos données personnelles à votre insu.</li>
+        <li><strong>Adware :</strong> Affiche des publicités non sollicitées.</li>
+        <li><strong>Backdoor :</strong> Donne un accès caché à un pirate.</li>
+        <li><strong>Ransomware :</strong> Chiffre vos fichiers et exige une rançon.</li>
+        <li><strong>Scareware :</strong> Fausse alerte pour vous pousser à télécharger un virus.</li>
+        <li><strong>Rootkit :</strong> Cache des éléments malveillants du système.</li>
+        <li><strong>Virus :</strong> Se propage et endommage le système.</li>
+      </ul>
 
-    <script src="js/jquery.min.js"></script>
+      <h3>🔐 Attaques de mots de passe</h3>
+      <img src="images/Attaque-MDP.png" alt="Attaques de mot de passe" />
 
-    <script>
-        $(window).on("scroll", function () {
-            var scroll = $(window).scrollTop();
+      <ul>
+        <li><strong>Diffusion :</strong> Réutilisation ou partage de mot de passe.</li>
+        <li><strong>Dictionnaire :</strong> Essai de mots de passe communs.</li>
+        <li><strong>Force brute :</strong> Teste toutes les combinaisons possibles.</li>
+        <li><strong>Rainbow table :</strong> Base de hash précalculés.</li>
+        <li><strong>Interception réseau :</strong> Capture des identifiants sur le réseau.</li>
+      </ul>
+    </section>
 
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
+    <section>
+      <h2>🔚 Conclusion</h2>
+      <p>
+        Grâce à cette formation, j’ai acquis des bases solides en cybersécurité. Ce certificat témoigne de mon engagement dans un domaine stratégique que je souhaite approfondir.
+      </p>
+    </section>
 
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function () {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function () {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function () {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-    </script>
+    <div style="text-align: right;">
+      <a href="index.html" class="btn-retour">⬅️ Retour</a>
+    </div>
 
-    <script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            })
-        });
-    </script>
+  </div>
 
-    <script src="js/bootstrap.min.js"></script>
+  <footer>
+    <p>© Ait-Ahmed Kéwan - Portfolio BTS&nbsp;SIO&nbsp;Chantilly</p>
+  </footer>
 
-	</body>
-
+</body>
 </html>
